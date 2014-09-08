@@ -18,7 +18,7 @@ public class MetroAzureDemoUI : MonoBehaviourGUI
     private List<LeaderBoard>     _leadersList        = new List<LeaderBoard>();
     private int                   _minScoreToReturn   = 100;
     private int                   _columnWidth        = 300;
-    private bool                  _isConnectedToAzure = false;
+
 
     /* 
      * You can find both of these properties in your Azure Portal: https://manage.windowsazure.com
@@ -95,7 +95,6 @@ public class MetroAzureDemoUI : MonoBehaviourGUI
 
         Azure.connect(_azureEndPoint, _applicationKey);
         Debug.Log("...Connecting to Azure Mobile Service. Endpoint:" + " " + _azureEndPoint + " " + "_appKey:" + "" + _applicationKey);
-        _isConnectedToAzure = true;
     }
 
 
@@ -172,7 +171,7 @@ public class MetroAzureDemoUI : MonoBehaviourGUI
                 GUILayout.BeginHorizontal();
 
                   // Use GUILayout.Label to draw text to the screen in Unity, rather than to the VS console
-                  GUILayout.Label("Name:" + " " + item.username + " " + "Score" + " " + item.score);
+                  GUILayout.Label(string.Format("Name: {0} Score: {1}", item.username, item.score));
 
                 GUILayout.EndHorizontal();
             }
@@ -244,7 +243,7 @@ public class MetroAzureDemoUI : MonoBehaviourGUI
                     // Loop through each item in the leaderboard list, and draw it to the log
                     foreach (var item in itemsInTheLeaderboard)
                     {
-                        GUILayout.Label("Name:" + " " + item.username + " " + "Score" + " " + item.score);
+                        GUILayout.Label(string.Format("Name: {0} Score: {1}", item.username, item.score));
                     }
                 });
             }
