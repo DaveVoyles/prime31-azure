@@ -5,11 +5,12 @@
  * @Author: Dave Voyles, Microsoft Corporation 2014
  */
 
-using Assets.Plugins.MetroAzure;
 using UnityEngine;
 using System.Collections.Generic;
-using Prime31.MetroAzure;
 using Prime31;
+//using Prime31.WinPhoneAzure; // If Win Phone
+using Prime31.MetroAzure; // If Win8
+
 
 public class MetroAzureDemoUI : MonoBehaviourGUI
 {
@@ -92,7 +93,7 @@ public class MetroAzureDemoUI : MonoBehaviourGUI
     private void ConnectToAzureMobileServiceBtn()
     {
         if (!GUILayout.Button("CONNECT TO AZURE SERVICE")) return;
-
+  
         Azure.connect(_azureEndPoint, _applicationKey);
         Debug.Log("...Connecting to Azure Mobile Service. Endpoint:" + " " + _azureEndPoint + " " + "_appKey:" + "" + _applicationKey);
     }

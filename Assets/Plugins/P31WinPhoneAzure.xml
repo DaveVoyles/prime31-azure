@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>P31WinPhoneAzure</name>
+    </assembly>
+    <members>
+        <member name="T:Prime31.WinPhoneAzure.Azure">
+            <summary>
+            Main interface to the Azure cloud service
+            </summary>
+        </member>
+        <member name="M:Prime31.WinPhoneAzure.Azure.authenticateWithServiceProvider(Prime31.WinPhoneAzure.MobileServiceAuthenticationProvider,System.Action{Prime31.WinPhoneAzure.MobileServiceUser})">
+            <summary>
+            Authenticates a user with the service provider. Note that the service provider must first be setup in the Azure web dashboard! The completionHandler
+            will return null in the event of a login failure.
+            </summary>
+        </member>
+        <member name="M:Prime31.WinPhoneAzure.Azure.connect(System.String,System.String)">
+            <summary>
+            Prepares the connection to the Azure servers. This must be called before any other methods.
+            </summary>
+            <param name="applicationUrl"></param>
+            <param name="applicationKey"></param>
+        </member>
+        <member name="M:Prime31.WinPhoneAzure.Azure.insert``1(``0,System.Action)">
+            <summary>
+            Inserts a new item into the database
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item"></param>
+            <param name="completionHandler"></param>
+        </member>
+        <member name="M:Prime31.WinPhoneAzure.Azure.update``1(``0,System.Action)">
+            <summary>
+            Updates an item in the database
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item"></param>
+            <param name="completionHandler"></param>
+        </member>
+        <member name="M:Prime31.WinPhoneAzure.Azure.delete``1(``0,System.Action)">
+            <summary>
+            Deletes an item from the database
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item"></param>
+            <param name="completionHandler"></param>
+        </member>
+        <member name="M:Prime31.WinPhoneAzure.Azure.where``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Action{System.Collections.Generic.List{``0}})">
+            <summary>
+            Queries the database
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="predicate"></param>
+            <param name="completionHandler"></param>
+        </member>
+        <member name="M:Prime31.WinPhoneAzure.Azure.lookup``1(``0,System.Action{``0})">
+            <summary>
+            Looks an item up to see if it is in the database
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item"></param>
+            <param name="completionHandler"></param>
+        </member>
+        <member name="T:Prime31.WinPhoneAzure.MobileServiceAuthenticationProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Prime31.WinPhoneAzure.MobileServiceAuthenticationProvider.MicrosoftAccount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Prime31.WinPhoneAzure.MobileServiceAuthenticationProvider.Google">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Prime31.WinPhoneAzure.MobileServiceAuthenticationProvider.Twitter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Prime31.WinPhoneAzure.MobileServiceAuthenticationProvider.Facebook">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Prime31.WinPhoneAzure.MobileServiceUser">
+            <summary>
+            Encapsulates a Microsoft MobileServiceUser
+            </summary>
+        </member>
+        <member name="F:Prime31.WinPhoneAzure.MobileServiceUser.userId">
+            <summary>
+            The userId for the user
+            </summary>
+        </member>
+        <member name="F:Prime31.WinPhoneAzure.MobileServiceUser.token">
+            <summary>
+            The access token for the user
+            </summary>
+        </member>
+        <member name="M:Prime31.WinPhoneAzure.MobileServiceUser.#ctor(System.String,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="userId"></param>
+            <param name="token"></param>
+        </member>
+    </members>
+</doc>
